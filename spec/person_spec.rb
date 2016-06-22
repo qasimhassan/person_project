@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+describe "FamilyMember Class" do
+  it "should inherit from class Person" do
+    expect(FamilyMember).to be < Person
+  end
+end
+
 describe "Person Class" do
   it 'should store and return personal information' do
     person = Person.new("joe", "bloggs", "1 Jan 1990")
@@ -38,9 +44,7 @@ describe "Person Class" do
     person.add_email("joe@foo.com")
     person.add_email("joe.bloggs@work.com")
     person.remove_email(1)
-    person.emails
 
     expect(person.emails).to contain_exactly("joe@foo.com")
   end
-
 end

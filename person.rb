@@ -24,4 +24,12 @@ class Person
   def remove_email(arraynum)
     @emails.delete_at(arraynum)
   end
+
+  def to_s
+    puts fullname + " was born on #{dob}.\n Their email addresses are #{emails}.\n Their phone numbers are #{phone_numbers}."
+  end
+end
+
+class FamilyMember < Person
+
 end
