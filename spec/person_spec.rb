@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe "FamilyMember Class" do
-  it "should inherit from class Person" do
+  it "should be able to add relationship value to a new person" do
+    familymember = FamilyMember.new("cousin","joe", "bloggs", "1 Jan 1990")
+
     expect(FamilyMember).to be < Person
+    expect(familymember.relationship).to eq "cousin"
   end
 end
 

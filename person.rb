@@ -31,5 +31,8 @@ class Person
 end
 
 class FamilyMember < Person
-
+  def initialize(relationship="cousin", )
+    @relationship = relationship
+    super()
+  end
 end
