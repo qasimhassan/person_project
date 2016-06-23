@@ -25,14 +25,29 @@ class Person
     @emails.delete_at(arraynum)
   end
 
-  def to_s
-    puts fullname + " was born on #{dob}.\n Their email addresses are #{emails}.\n Their phone numbers are #{phone_numbers}."
+  def remove_number(arraynum)
+    @phone_numbers.delete_at(arraynum)
   end
 end
 
 class FamilyMember < Person
-  def initialize(relationship="cousin", )
+attr_accessor :relationship
+  def initialize(relationship="cousin", *args)
     @relationship = relationship
-    super()
+    super(*args)
+  end
+end
+
+class AddressBook
+  def initialize
+    @bookarray = []
+  end
+
+  def add(person)
+    @bookarray << person
+  end
+
+  def list
+    @bookarray.each_with_index { |val,index| puts "- #{val}" }
   end
 end
