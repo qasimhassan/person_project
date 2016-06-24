@@ -1,5 +1,6 @@
 require 'rspec'
 require './application'
+require 'pry'
 
 RSpec.configure do |config|
   config.color = true

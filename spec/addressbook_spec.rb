@@ -26,7 +26,11 @@ describe AddressBook do
 
   #let(Person) {}
 
-  it "should print out all the details in an address book" do
+  it "should load a yaml file and post the entries to the address book" do
+    ab = AddressBook.new
+    ab.load_yaml 'phonebook_data.yml'
 
+    expect(ab.bookarray.size).to eq 3
+    expect(ab.bookarray[0]).to be_a Person
   end
 end

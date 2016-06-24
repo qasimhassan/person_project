@@ -39,8 +39,20 @@ attr_accessor :relationship
 end
 
 class AddressBook
+  attr_reader :bookarray
+
   def initialize
     @bookarray = []
+  end
+
+  def load_yaml(filepath)
+    file = YAML.load(File.open(filepath))
+    file['people'].each do |i|
+      person = Person.new(i["firstname"], i["surname"], i["dob"])
+        i["emails"].each { |e| person.add_email(e) }
+        i["phones"].each { |n| person.add_phone(n) }
+      @bookarray << person
+    end
   end
 
   def add(person)
@@ -55,11 +67,7 @@ class AddressBook
     puts address = "Address Book"
     puts "-" * address.length
     @bookarray.each_with_index do |person,k|
-      puts "- #{k+1} #{person.fullname} "
+      puts "-Entry #{k+1} #{person.fullname} "
    end
-  end
-
-  def load_yaml(filepath)
-    YAML.load(File.open(filepath))
   end
 end

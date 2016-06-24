@@ -5,3 +5,4 @@ ruby "2.3.1"
 gem 'rspec'
 gem 'httparty'
 gem 'rake'
+gem 'pry'
