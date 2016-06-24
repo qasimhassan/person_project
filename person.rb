@@ -44,10 +44,22 @@ class AddressBook
   end
 
   def add(person)
-    @bookarray << person
+    if person.is_a? Person || FamilyMember
+      @bookarray << person
+    else
+      raise ArgumentError, "You must give a valid person object"
+    end
   end
 
   def list
-    @bookarray.each_with_index { |val,index| puts "- #{val}" }
+    puts address = "Address Book"
+    puts "-" * address.length
+    @bookarray.each_with_index do |person,k|
+      puts "- #{k+1} #{person.fullname} "
+   end
+  end
+
+  def load_yaml(filepath)
+    YAML.load(File.open(filepath))
   end
 end

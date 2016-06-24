@@ -1,0 +1,32 @@
+people:
+  - firstname:  Joe
+    surname:  Bloggs
+    dob:  1 Jan 1990
+    emails:
+      - joe@foo.com
+      - joe@bar.com
+    phones:
+      - 078876764673
+      - 087875866564
+  - firstname:  Qasim
+    surname:  Hassan
+    dob:  1 Jan 1994
+    emails:
+      - qasim@foo.com
+      - qasim@bar.com
+      - qas_hassan@live.co.uk
+    phones:
+      - 078876764673
+      - 087875866564
+      - 07460409132
+  - firstname:  Harry
+    surname:  Potter
+    dob:  1 Jan 1990
+    emails:
+      - harry@foo.com
+      - potter@bar.com
+      - harrypotter@live.com
+      - hpotter@hotmail.com
+    phones:
+      - 078876764673
+      - 087875866564
